@@ -1,5 +1,3 @@
-
-
 import base64
 from github import Github
 from pprint import pprint
@@ -16,6 +14,7 @@ def print_repo(repo):
     print("Date of last push:", repo.pushed_at)
     print("Home Page:", repo.homepage)
     print("Language:", repo.language)
+    print('-'*50)
     print("Contents:")
     for content in repo.get_contents(""):
         print(content)
@@ -27,6 +26,7 @@ def print_repo(repo):
 user = g.get_user(username)
 for repo in user.get_repos():
 	print_repo(repo)
+	print('='*100)
 
 
 
